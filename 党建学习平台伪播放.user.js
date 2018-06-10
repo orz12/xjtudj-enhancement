@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         党建学习平台伪播放3.3(alpha)
 // @namespace    http://tampermonkey.net/
-// @version      3.3.1
+// @version      3.3.2
 // @description  try to take over the world!
 // @author       Dabble
 // @match        http://xjtudj.edu.cn/myzone/zone_newStudyPlanDetail.do?classID=*
@@ -83,6 +83,7 @@
                     //clearInterval(t);
                     if(mode == 0 && confirm("必修课已经刷完，是否继续刷选修？\nPS：记得看看有没有上传心得的要求，然后生成证书。")){
                         mode = 1;
+                        layer.msg('Trick Started');
                         continue;
                     }else{
                         return false;
