@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         党建学习平台伪播放3.3(alpha)
 // @namespace    http://tampermonkey.net/
-// @version      3.3.2
+// @version      3.3.3
 // @description  try to take over the world!
 // @author       Dabble
 // @match        http://xjtudj.edu.cn/myzone/zone_newStudyPlanDetail.do?classID=*
@@ -44,6 +44,7 @@
     }
     layer.msg("Trick Started");//游戏开始
     (function foo() {
+        var minSetbacks = 100;
         var ParentDiv
         if(mode == 0){//必修
             ParentDiv = document.querySelector("body > div.myself_panl > div.myself_right > div:nth-child(2) > div.right_middle > div:nth-child(1) > div:nth-child(3)");
@@ -61,6 +62,7 @@
                 return false;
             }
             var setbacks = parseInt(/完成(\d+)%/.exec(ParentDiv.children[i].children[2].innerText)[1]);
+            if (setbacks < minSetbacks) {minSetbacks = setbacks;}
             if (setbacks < 1){setbacks = 1;}
             var msg = reg.exec(a.href);
             if(msg == null || msg[4] != /classID=(\d+)/.exec(window.location.href)[1]){//如果无法读取或者班级不对，再回炉重造
@@ -123,6 +125,7 @@
                 }
             });
         }
+        ParentDiv.parentElement.children[0].innerHTML += minSetbacks + "%"
         t = setTimeout(foo, delay);
     })();
 })();
