@@ -97,7 +97,7 @@
             if (currentTime > 0 && DuringTime > 0 && currentTime + 30 > DuringTime && setbacks > 90){//容差//并躲避掉setbacks置1的时候观看时间再次置零的问题
                 currentTime = DuringTime;
             } else {
-                currentTime = currentTime + step;
+                currentTime = currentTime + Math.floor(Math.random() * step + 1); //随机扰动，防检测
             }
             $.ajax({
                 url:'http://xjtudj.edu.cn:80/course/course_updateUserWatchRecord.do',
