@@ -1,14 +1,13 @@
 // ==UserScript==
 // @name         党建学习平台伪播放4.0(alpha)
 // @namespace    http://tampermonkey.net/
-// @version      4.0.1
-// @description  try to take over the world!
+// @version      4.0.2
+// @description  注：4.0版使用方法为，点击我的空间-详情-去观看，在视频播放界面上方的“您所在的位置”右侧将生成一个“开始刷课”按钮，页面加载完成后，点击该按钮，若提示“已完成该课程”即本次刷课成功。
 // @author       Dabble
 // @match        http://xjtudj.edu.cn/course_detail.html?navId=course_list*
 // @grant        none
 // @run-at       document-idle
 // ==/UserScript==
-//注：4.0版使用方法为，点击我的空间-详情-去观看，在视频播放界面上方的“您所在的位置”右侧将生成一个“开始刷课”按钮，页面加载完成后，点击该按钮，若提示“已完成该课程”即本次刷课成功。
 
 (function() {
     'use strict';
