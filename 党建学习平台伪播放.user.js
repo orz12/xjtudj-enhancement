@@ -44,7 +44,7 @@
                                             console.log("已完成该课程");
                                             //window.history.go(-1);
                                             setTimeout(function () {
-                                                if ($('.curr_sour') === $('.per_course:last')) {
+                                                if ($('.curr_sour').html() === $('.per_course:last').html()) {
                                                     alert('本章课程已结束')
                                                 } else {
                                                     window.location.href = $('.curr_sour').next().attr('href');
